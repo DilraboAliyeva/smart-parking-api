@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-starter-template",
+  "name": "nestjs-smart-parking",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -55,7 +55,7 @@
     "@types/jest": "28.1.8",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/luxon": "^3.2.0",
-    "@types/node": "^16.0.0",
+    "@types/node": "^16.18.96",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",

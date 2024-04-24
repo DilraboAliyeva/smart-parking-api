@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { compareSync, hash } from 'bcryptjs';
+import { hash } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { HttpError } from 'src/common/exception/http.error';
 import { Repository } from 'typeorm';
@@ -50,7 +50,7 @@ export class LoginAdminUseCase {
         { id: admin.id },
         {
           refresh_token: await hash(refresh_token, 10),
-          updated_at: Date.now(),
+          updated_at: new Date(),
         },
       );
 

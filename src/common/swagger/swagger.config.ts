@@ -1,18 +1,17 @@
 import { DocumentBuilder } from '@nestjs/swagger';
 import { Admin } from 'src/modules/admin/entities/admin.entity';
-import { Template } from 'src/modules/template/entity/template.entity';
 import { SwaggerTheme } from 'swagger-themes';
 const theme = new SwaggerTheme('v3');
 
 export const ApiTokenOptions = {
   swaggerOptions: {},
   explorer: true,
-  customCss: theme.getBuffer('dark'),
+  customCss: theme.getBuffer('classic'),
 };
 
 export const ApiSwaggerOptions = new DocumentBuilder()
-  .setTitle('Template API')
-  .setDescription('Template API documantation')
+  .setTitle('Smart Parking API')
+  .setDescription('Smart Parking API documantation')
   .setVersion('1.0')
   .addBearerAuth(
     {
@@ -28,5 +27,5 @@ export const ApiSwaggerOptions = new DocumentBuilder()
   .build();
 
 export const ApiDocModules = {
-  include: [Admin, Template],
+  include: [Admin],
 };

@@ -1,12 +1,5 @@
 import { AbstractEntity } from 'src/common/entity/abstract.entity';
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  JoinTable,
-  ManyToMany,
-  ManyToOne,
-} from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
 @Entity()
 export class Admin extends AbstractEntity {

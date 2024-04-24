@@ -57,7 +57,7 @@ export class UpdateAdminUseCase {
         });
       }
 
-      admin.updated_at = Date.now();
+      admin.updated_at = new Date();
 
       return await this.adminRepo.save(admin);
     } catch (error) {

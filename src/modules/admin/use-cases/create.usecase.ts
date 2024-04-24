@@ -25,8 +25,8 @@ export class CreateAdminUseCase {
         username: dto.username,
         password: encrypt(dto.password),
         type: dto.type,
-        created_at: Date.now(),
-        updated_at: Date.now(),
+        created_at: new Date(),
+        updated_at: new Date(),
       });
 
       return await this.adminrepo.save(admin);

@@ -1,12 +1,28 @@
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 export abstract class AbstractEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('bigint')
-  created_at: number;
+  @Column('timestamp', { default: () => 'CURRENT_TIMESTAMP', select: false })
+  created_at: Date;
 
-  @Column('bigint', { nullable: true })
-  updated_at: number;
+  @Column('timestamp', { default: () => 'CURRENT_TIMESTAMP', select: false })
+  updated_at: Date;
+
+  @BeforeInsert()
+  private _() {
+    this.created_at = new Date();
+    this.updated_at = new Date();
+  }
+
+  @BeforeUpdate()
+  private __() {
+    this.updated_at = new Date();
+  }
 }
